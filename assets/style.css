@@ -1,13 +1,13 @@
 :root {
-  --bg: #0d0d0f;
-  --bg-alt: #131316;
-  --fg: #f2f0ec;
-  --fg-muted: #a8a5a0;
-  --fg-faint: #6f6c68;
-  --accent: #ff6a3d;
-  --accent-fg: #0d0d0f;
-  --border: #232326;
-  --radius: 10px;
+  --bg: #ffffff;
+  --bg-alt: #fafafa;
+  --fg: #111111;
+  --fg-muted: #555555;
+  --fg-faint: #949494;
+  --accent: #e2231a;
+  --accent-fg: #ffffff;
+  --border: #e6e6e6;
+  --radius: 2px;
   --wrap: 1080px;
   --wrap-narrow: 720px;
 }
@@ -48,6 +48,7 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin: 0 0 0.5em;
+  color: var(--fg);
 }
 
 h1 {
@@ -59,7 +60,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   margin-bottom: 0.4em;
 }
 
@@ -74,8 +75,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(13, 13, 15, 0.85);
-  backdrop-filter: blur(10px);
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -84,8 +84,8 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .logo {
@@ -125,36 +125,35 @@ p {
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  border-radius: 999px;
+  border-radius: var(--radius);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   border: 1px solid transparent;
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   white-space: nowrap;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
 }
 
 .btn-primary {
   background: var(--accent);
   color: var(--accent-fg);
+  border-color: var(--accent);
 }
 
 .btn-primary:hover {
-  background: #ff7f57;
+  background: #c81d15;
+  border-color: #c81d15;
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--fg);
-  border-color: var(--border);
+  border-color: var(--fg);
 }
 
 .btn-ghost:hover {
-  border-color: var(--fg-faint);
+  background: var(--fg);
+  color: var(--bg);
 }
 
 .btn-small {
@@ -180,7 +179,7 @@ p {
 /* Hero */
 
 .hero {
-  padding: 96px 0 72px;
+  padding: 100px 0 76px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -194,11 +193,7 @@ p {
   font-size: 0.78rem;
   color: var(--accent);
   font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  color: var(--fg);
+  margin-bottom: 22px;
 }
 
 .lede {
@@ -209,7 +204,7 @@ p {
 
 .fine-print {
   margin-top: 18px;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--fg-faint);
 }
 
@@ -248,18 +243,12 @@ p {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 40px;
 }
 
 .card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 26px;
-}
-
-.card h3 {
-  color: var(--fg);
+  padding-top: 20px;
+  border-top: 2px solid var(--accent);
 }
 
 .card p {
@@ -285,7 +274,7 @@ p {
 
 .who-list li {
   position: relative;
-  padding-left: 22px;
+  padding-left: 20px;
   color: var(--fg);
 }
 
@@ -293,10 +282,9 @@ p {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.55em;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
   background: var(--accent);
 }
 
@@ -377,6 +365,7 @@ p {
 
   .card-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .who-list {
